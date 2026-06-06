@@ -1,0 +1,662 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>search</title>
+
+{% block style %}
+<style>
+
+
+/* ---------------------deal------------------------------------------------- */
+.exct_deal {
+  width: 220px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: 0.3s;
+  position: relative;
+  margin-left: 30px;
+padding: 60px;
+margin-top: 30px;
+
+
+}
+
+/* Hover Effect */
+.exct_deal:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* Image */
+.deal_img img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+/* Title */
+.exct_deal h4 {
+  font-size: 16px;
+  margin: 5px 0;
+  height: 40px;
+  overflow: hidden;
+}
+
+/* Price */
+.exct_deal p {
+  margin: 2px 0;
+}
+
+/* New Price */
+.exct_deal p:first-of-type {
+  color: green;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Old Price */
+.exct_deal del {
+  color: gray;
+  font-size: 14px;
+}
+
+/* Buttons */
+.exct_deal a {
+  display: block;
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+}
+
+/* Flipkart Button */
+.exct_deal a:nth-of-type(1) {
+  background: #2874f0;
+}
+
+/* Amazon Button */
+.exct_deal a:nth-of-type(2) {
+  background: #ff9900;
+}
+
+/* Button Hover */
+.exct_deal a:hover {
+  opacity: 0.9;
+}
+
+/* Discount Badge (Optional add) */
+.best-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  padding: 3px 6px;
+  border-radius: 5px;
+}
+
+
+.exct_all_d{
+margin-top: -80px;
+
+/* position: fixed; */
+}
+
+
+.all_exct_container{
+  display: flex;
+  align-items: flex-start; 
+  flex-wrap: wrap;
+  margin-left: 100px;
+  /* border: 2px solid red; */
+}
+
+/* ====================blogs================================= */
+
+.blog-header p {
+  color: gray;
+}
+.blog-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.blog-header h1 {
+  font-size: 32px;
+}
+.blog-filters {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.blog-filters button {
+  padding: 8px 14px;
+  margin: 5px;
+  border: none;
+  background: #eee;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.blog-filters button:hover {
+  background: #ddd;
+}
+/* ------------------------fitness----------------------------------------- */
+
+
+
+/* Card */
+.blog-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  /* border: 2px solid red; */
+  height: 236px;
+  width: 400px;
+  display: flex;
+  margin-left: 20px;
+  margin-top: 50px;
+  
+}
+.fitness_div{
+    /* border: 2px solid blue; */
+    height: 200px;
+    width: 300px;
+    margin-top: 18px;
+    border-radius: 25px;
+    margin-left: 10px;
+
+}
+.fitness_div img{
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+   
+}
+
+
+.blog-card:hover {
+  transform: translateY(-5px);
+}
+
+.blog-card img {
+  width: 100%;
+}
+
+/* Content */
+.blog-content {
+  padding: 15px;
+  /* border: 1px solid blue; */
+  height: 200px;
+  width: 360px;
+  position: relative;
+}
+
+.blog-content h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.blog-content p {
+  font-size: 14px;
+  color: gray;
+}
+
+/* Category Tag */
+.category {
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 20px;
+  color: white;
+}
+
+
+.category.fitness {
+  background: red;
+}
+.category.funny{
+  background: orange;
+}
+.category.news{
+  background: blue;
+}
+
+
+/* Button */
+.read-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: black;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+
+}
+.read-btn:hover{
+  background-color: blue;
+
+
+}
+.read_div{
+  /* border: 1px solid red; */
+  position: absolute;
+  height: 70px;
+  top:75%;
+}
+.exct_all_ft{
+  display: flex;
+  flex-wrap: wrap;
+  /* margin-top: -50px; */
+  margin-left: 35px;
+  /* border: 2px solid red; */
+ 
+}
+.exct_all_funny{
+ /* border: 2px solid blue; */
+ display: flex;
+ flex-wrap: wrap;
+  /* width: 430px; */
+}
+.exct_all_news{
+ /* border: 2px solid green; */
+  display: flex;
+ flex-wrap: wrap;
+ 
+}
+.exct_all_ffn{
+  /* border: 2px solid black; */
+  /* display: flex; */
+  margin-top: 45px;
+}
+
+.filter_baar{
+  position: fixed;
+  top: 60px; /* navbar height ke hisaab se adjust karo */
+  z-index: 100;
+  background: white;
+  width: 100%;
+
+}
+
+
+/* ================== RESPONSIVE MEDIA QUERIES ================== */
+
+/* 📱 Mobile (up to 600px) */
+@media (max-width: 580px) {
+
+
+
+.all_exct_container{
+  display: flex;
+
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* border: 2px solid red; */
+  margin-left: 0px;
+  margin-top: -45px;
+
+
+}
+
+
+
+
+  .exct_deal {
+    width: 35px;
+
+    height: 250px;
+ 
+   margin-left: 15px;
+    /* border: 1px solid blue; */
+  
+  }
+
+.deal_img{
+  height: 150px;
+  width: 150px;
+  margin-left: -55px;
+  margin-top: -40px;
+
+}
+.deal_img img{
+  height: 100%;
+  width: 100%;
+}
+.exct_deal h4{
+  font-size: 12px;
+  /* border: 1px solid green; */
+  width: 110px;
+margin-left: -42px;
+margin-top: 10px;
+
+}
+.exct_deal p{
+  font-size: 13px;
+  margin-left: -25px;
+  /* border: 1px solid red; */
+  margin-top: 13px;
+  
+}
+.discount_p{
+  font-size: 15px;
+  margin-left: -3px;
+  /* border: 1px solid blue; */
+  margin-top:-5px;
+  position: absolute;
+  
+}
+.exct_deal a{
+  font-size: 12px;
+  width: 92px;
+  margin-left: -38px;
+  margin-top: 35px;
+  /* border: 1px solid red; */
+  margin-bottom: -25px;
+}
+
+.best-badge{
+  font-size: 8px;
+  margin-top: -8px;
+  margin-left: -8px;
+}
+
+
+/* -------------------------BLOGS------------------------------- */
+  .filter_baar{
+    margin-top: 65px;
+    /* border: 1px solid red; */
+   
+    height: 110px;
+  }
+.blog-header p {
+  color: gray;
+  font-size: 14px;
+  margin-top: -5px;
+}
+.blog-header {
+  text-align: center;
+  margin-bottom: 5px;
+  margin-top: -14px;
+}
+.blog-header h1 {
+  font-size: 22px;
+}
+.blog-filters {
+  text-align: center;
+  margin-top: -6px;
+}
+.blog-filters button{
+  font-size: 13px;
+
+}
+.blog-filters button {
+  padding: 4px 7px;
+  margin: 5px;
+  border: none;
+  background: #eee;
+  border-radius: 10px;
+  cursor: pointer;
+  
+}
+.blog-filters button:hover {
+  background: #ddd;
+}
+
+  /* ------------------------------------------- */
+  .blog-card{
+    width: 105px;
+    background: white;
+    /* height: 100px; */
+    /* border: 1px solid red; */
+    margin: 5px;
+    margin-top: 20px;
+    position: relative;
+  display: flex;
+  }
+
+  .fitness_div{
+    height: 80px;
+    width: 80px;
+    /* border: 1px solid blue; */
+    margin-top: 20px;
+    position: absolute;
+    border-radius: 5px;
+  }
+    .fitness_div img{
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+   }
+
+  .blog-content{
+    
+  }
+
+  .blog-content h3{
+    font-size: 12px;
+  }
+
+  .blog-content p{
+    font-size: 10px;
+  }
+
+.read-btn {
+
+  
+  padding: 2px 3px;
+  background: black;
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  border-radius: 4px; 
+
+}
+.read_div{
+  position: absolute;
+top: 199px;
+right: 25px;
+  
+}
+
+  .category{
+    font-size: 10px;
+    margin-top: -20px;
+    /* border: 1px solid red; */
+    position: absolute;
+    margin-left: -20px;
+   
+  }
+  .exct_all_ffn{
+  margin-top: 10px;
+  margin-left: -30px;
+}
+.blog-content h3{
+  font-size: 11px;
+  margin-top:92px;
+  width: 92px;
+  height: 100px;
+  margin-left: -10px;
+  /* border: 1px solid red; */
+  text-align: center;
+  position: absolute;
+  
+}
+.blog-content p{
+  font-size: 8px;
+  margin-top: 155px;
+  width: 92px;
+  height: 40px;
+  margin-left: -10px;
+  /* border: 1px solid red; */
+  text-align: center;
+
+
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+
+}
+
+</style>
+{% endblock style %}
+
+</head>
+
+<body>
+	{% block body %}
+
+<div class="all_exct_container">
+{% for i in yy %}
+ <div class="exct_deal">
+      <span class="best-badge">{{i.badge}}</span>
+      <div class="deal_img">
+        <img src="{{i.image.url}}">
+      </div>
+
+      <h4>{{i.name}}</h4>
+      <p>₹{{i.price}}</p>
+      
+      <p style="color: red;">
+      <del style="color:red;" class="discount_p">
+      {{i.discount}}</del>
+      </p>
+
+      <a href="{{i.link}}">Buy On Flipkart</a>
+      <a href="#">Buy on Amazone</a>
+
+    </div>
+{% endfor %}
+</div>
+
+<!-- ------------------blogs------------------------- -->
+ <!-- <div class="filter_baar">
+    <div class="blog-header">
+      <h1>✍️ Latest Blogs</h1>
+      <p>Fitness • Funny • News • Daily Updates</p>
+    </div> -->
+
+    <!-- 🎯 CATEGORY FILTER -->
+    <!-- <div class="blog-filters">
+      <a href="/blogs"><button style="background-color: black;color: white;">All</button></a>
+      <a href="/fitness"><button >Fitness 💪</button></a>
+      <a href="/funny"><button>Funny 😂</button></a>
+      <a href="/news"><button>News 📰</button></a>
+  </div>
+</div>   -->
+  <!-- -------------------------------------FITNESS----------------------------------------------- -->
+<div class="exct_all_ffn">
+
+  <div class="exct_all_ft">
+    {% for i in fness %}
+   
+   <div class="blog-card">
+
+    <div class="fitness_div">
+      <img src="{{i.image.url}}">
+    </div>
+
+    <div class="blog-content">
+
+      <span class="category fitness">Fitness</span>
+      <h3>{{i.title}}</h3>
+      <p>{{i.decription}}</p>
+        <div class="read_div">
+          <a href="{% url 'blog_fitness' i.id %}" class="read-btn">Read More</a>
+      </div>
+    </div>
+
+  </div>
+
+    {% endfor %}
+  </div>
+
+
+ <!-- ---------------------funny----------------------------------- -->
+<div class="exct_all_ft">
+  <div class="exct_all_funny">
+    {% for i in funny %}
+    <div class="blog-card">
+
+    <div class="fitness_div">
+      <img src="{{i.image.url}}">
+    </div>
+
+    <div class="blog-content">
+
+      <span class="category funny">Funny</span>
+      <h3>{{i.title}}</h3>
+      <p>{{i.decription}}</p>
+        <div class="read_div">
+          <a href="{% url 'blog_funny' i.id %}" class="read-btn">Read More</a>
+      </div>
+    </div>
+
+  </div>
+    {% endfor %}
+	</div>
+  </div>
+
+
+ <!-- ------------------------news-------------------------------------- -->
+
+
+
+	<div class="exct_all_ft">
+      <div class="exct_all_news">
+    {% for i in news %}
+      <div class="blog-card">
+
+    <div class="fitness_div">
+      <img src="{{i.image.url}}">
+    </div>
+
+    <div class="blog-content">
+
+      <span class="category news">news</span>
+      <h3>{{i.title}}</h3>
+      <p>{{i.decription}}</p>
+        <div class="read_div">
+          <a href="{% url 'blog_news' i.id %}" class="read-btn">Read More</a>
+      </div>
+    </div>
+
+  </div>
+    {% endfor %}
+	</div>
+  </div>
+
+
+
+  <!-- <div class="blog-card">
+
+    <div class="fitness_div">
+      <img src="/static/fitness/weight.jpg">
+    </div>
+
+    <div class="blog-content">
+
+      <span class="category fitness">Fitness</span>
+      <h3>Weight Kaise Badhaye 7 Days Me (Natural Tarike)</h3>
+      <p>जानिए आसान तरीके जिससे आप जल्दी weight gain कर सकते हैं...</p>
+      <a href="#" class="read-btn">Read More</a>
+
+    </div>
+
+  </div> -->
+</div>    
+
+
+{% endblock body %}
+</body>
+</html>

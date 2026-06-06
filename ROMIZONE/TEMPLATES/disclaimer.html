@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>disclaimer</title>
+
+		{% block style %}
+	<style>
+		.data_p{
+			margin-left: 70px;
+		}
+		.data_h3{
+			margin-left: 25px;
+		}
+				@media(max-width:580px){
+.data_p{
+	font-size: 14px;
+	margin-left: 15px
+	
+}
+.data_h3{
+	margin-left: -1px;
+	font-size: 15px;
+}
+.data_h2{
+	font-size: 20px;
+}
+.div_data_exct{
+	margin: 15px;
+	/* border: 2px solid red; */
+}
+
+
+		}
+	</style>
+	{% endblock style %}
+
+</head>
+<body>
+{% block body %}
+<div class="div_data_exct">
+<center><h2>Disclaimer for RokartZone</h2></center>
+
+<p class="data_p">All the information on this website – https://rokartzone.com – is published in good faith and for general informational purposes only.</p>
+<hr>
+<h3 class="data_h3">Affiliate Disclaimer:</h3>
+<p class="data_p">RokartZone is an affiliate-based website. Some of the links on this website are affiliate links, meaning we may earn a commission if you click and make a purchase, at no extra cost to you.</p>
+
+<p class="data_p">We participate in affiliate programs such as Amazon, Flipkart, Meesho, and others. We do not sell products directly. All products listed on our website redirect users to third-party platforms where the actual purchase takes place.</p>
+<hr>
+<h3 class="data_h3">Product Information:</h3>
+<p  class="data_p">Product prices, availability, and discounts may change without notice. We do not guarantee accuracy, completeness, or reliability of product details.</p>
+<hr>
+<h3 class="data_h3">External Links Disclaimer:</h3>
+<p class="data_p">Our website may contain links to external websites. We do not have control over the content and policies of these websites.</p>
+<hr>
+<h3 class="data_h3">Content Disclaimer:</h3>
+<p class="data_p">We also publish blogs in categories such as Fitness, Funny, and News. The information provided is for general informational and entertainment purposes only.</p>
+<hr>
+<h3 class="data_h3">Use at Your Own Risk:</h3>
+<p class="data_p">Any action you take upon the information you find on this website is strictly at your own risk.</p>
+</div>
+{% endblock body %}
+</body>
+</html>

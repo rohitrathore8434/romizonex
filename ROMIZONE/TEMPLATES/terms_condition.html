@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>term & condition</title>
+	{% block style %}
+	<style>
+		.data_p{
+			margin-left: 70px;
+		}
+		.data_h3{
+			margin-left: 25px;
+		}
+				@media(max-width:580px){
+.data_p{
+	font-size: 14px;
+	margin-left: 15px
+	
+}
+.data_h3{
+	margin-left: -1px;
+	font-size: 15px;
+}
+.data_h2{
+	font-size: 20px;
+}
+.div_data_exct{
+	margin: 15px;
+	/* border: 2px solid red; */
+}
+
+
+		}
+	</style>
+	{% endblock style %}
+
+
+</head>
+<body>
+{% block body %}
+<div class="div_data_exct">
+<center><h2>Terms and Conditions for RokartZone</h2></center>
+
+<h3 class="data_h3">Welcome to RokartZone.com!</h3>
+<p class="data_p">By accessing this website, you agree to the following terms and conditions.</p>
+<hr>
+<h3 class="data_h3">Use of Website:</h3>
+<p class="data_p">You agree to use this website only for lawful purposes and not engage in any activity that may harm the website or its users.</p>
+<hr>
+<h3 class="data_h3">Affiliate Disclosure:</h3>
+<p class="data_p">RokartZone contains affiliate links. When users click on product links, they are redirected to third-party websites such as Amazon, Flipkart, or Meesho.</p>
+<hr>
+<h3 class="data_h3">We are not responsible for:</h3>
+
+<p class="data_p">* Product quality<br></p>
+<p class="data_p">* Pricing changes<br></p>
+<p class="data_p">* Shipping or delivery issues<br></p>
+<p class="data_p">* Returns or refunds<br></p>
+
+<p class="data_p">All such matters are handled by the respective third-party platforms.</p>
+<hr>
+<h3 class="data_h3">Intellectual Property Rights:</h3>
+<p class="data_p">All content on RokartZone, including text, graphics, logos, and layout, is owned by us unless stated otherwise. Unauthorized use or copying is prohibited.</p>
+<hr>
+<h3 class="data_h3">Content Changes:</h3>
+<p class="data_p">We reserve the right to update, modify, or remove content at any time without prior notice.</p>
+<hr>
+<h3 class="data_h3">Limitation of Liability:</h3>
+<p class="data_p">RokartZone will not be liable for any losses or damages in connection with the use of our website.</p>
+<hr>
+<h3 class="data_h3">User Agreement:</h3>
+<p class="data_p">By continuing to use this website, you agree to these terms and conditions.</p>
+</div>
+{% endblock body %}
+</body>
+</html>

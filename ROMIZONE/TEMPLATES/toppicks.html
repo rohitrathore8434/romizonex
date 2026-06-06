@@ -1,0 +1,330 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}top pick{% endblock title %}</title>
+</head>
+{% block style %}
+<style>
+
+.exct_top{
+  /* border: 2px solid red; */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main-title {
+  margin-top: 30px;
+  font-size: 32px;
+}
+
+.product {
+  background: white;
+  color: black;
+  width: 320px;
+  height: 470px;
+  margin: 40px ;
+  padding: 20px;
+  border-radius: 15px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  transition: 0.4s;
+  /* border: 2px solid green; */
+  position: relative;
+  margin-top: -2px;
+     font-family: 'Segoe UI', sans-serif;
+
+
+  text-align: center;
+
+}
+
+.product:hover {
+  transform: translateY(-10px) scale(1.03);
+}
+
+
+.top_img_div{
+  /* border: 2px solid red; */
+  height: 270px;
+  width: 250px;
+  margin-left: 33px;
+  
+}
+.top_img_div img{
+  height: 100%;
+  width: 100%;
+}
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: red;
+  color: white;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.desc {
+  font-size: 14px;
+  /* margin: 10px 0; */
+  color: #555;
+  position: absolute;
+  text-align: center;
+  /* border: 1px solid green; */
+  margin-left: 25px;
+  height: 20px;
+  width: 260px;
+  margin-top: -20px;
+  /* font-weight: 16px; */
+}
+
+.price-box {
+  margin: 10px 0;
+  position: absolute;
+  margin-left: 90px;
+margin-top:10px;
+height: 30px;
+width: 200px;
+/* border: 1px solid red; */
+text-align: center;
+
+}
+
+.new-price {
+  font-size: 22px;
+  font-weight: bold;
+  color: green;
+  margin-right: 10px;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.buy-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 20px;
+  background: linear-gradient(45deg, #ff512f, #dd2476);
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.product_btn{
+  position: absolute;
+  margin-left: 75px;
+  margin-top: 30px;
+}
+
+.buy-btn:hover {
+  background: linear-gradient(45deg, #dd2476, #ff512f);
+  transform: scale(1.1);
+}
+
+.product_name{
+  /* border: 1px solid red; */
+  width: 320px;
+  height: 85px;
+}
+
+
+/* =========================media 580px=========================== */
+@media(max-width:580px){
+body {
+  /* font-family: 'Segoe UI', sans-serif; */
+  /* background: linear-gradient(135deg, #1d2671, #c33764); */
+  margin: 0;
+padding: 0;
+  text-align: center;
+  /* color: white; */
+}
+.exct_top{
+  /* border: 2px solid red; */
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.main-title {
+  margin-top: -30px;
+  font-size: 20px;
+}
+
+.product {
+  background: white;
+  color: black;
+  width: 140px;
+  height: 240px;
+  margin: 10px ;
+  padding: 10px;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 05px 15px rgba(0,0,0,0.3);
+  transition: 0.4s;
+  /* border: 2px solid green; */
+  position: relative;
+  margin-top: -2px;
+    font-family: 'Segoe UI', sans-serif;
+
+
+  text-align: center;
+
+}
+
+.product:hover {
+  transform: translateY(-10px) scale(1.03);
+}
+
+.top_img_div{
+  /* border: 2px solid red; */
+  height: 100px;
+  width: 100px;
+  margin-left: 21px;
+  
+}
+.top_img_div img{
+  height: 100%;
+  width: 100%;
+}
+
+
+.badge {
+  position: absolute;
+  top: 3px;
+  left: 2px;
+  background:purple;
+  color: white;
+  padding: 3px 5px;
+  font-size: 8px;
+  border-radius: 5px;
+}
+
+.desc {
+  font-size: 10px;
+  /* margin: 10px 0; */
+  color: #555;
+  position: absolute;
+  text-align: center;
+  /* border: 1px solid green; */
+  margin-left: 4px;
+  height: 10px;
+  width: 130px;
+  margin-top: -8px;
+  /* font-weight: 16px; */
+}
+
+.price-box {
+  margin: 5px 0;
+  position: absolute;
+  margin-left: 45px;
+margin-top:18px;
+height: 15px;
+width: 100px;
+/* border: 1px solid red; */
+text-align: center;
+
+}
+
+.new-price {
+  font-size: 11px;
+  font-weight: bold;
+  color: green;
+  margin-right: 5px;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: gray;
+  font-size: 12px;
+}
+
+.buy-btn {
+  display: inline-block;
+  margin-top: 37px;
+  padding: 1px 1px;
+  margin-left: -30px;
+  background: linear-gradient(45deg, #ff512f, #dd2476);
+  color: white;
+  text-decoration: none;
+  border-radius: 9px;
+  font-weight: bold;
+  transition: 0.3s;
+  width: 120px;
+  font-size: 14px;
+  
+}
+.product_btn{
+  position: absolute;
+  margin-left: 38px;
+  margin-top: 15px;
+}
+
+.buy-btn:hover {
+  background: linear-gradient(45deg, #dd2476, #ff512f);
+  transform: scale(1.1);
+}
+
+.product_name{
+  /* border: 1px solid red; */
+  width:130px;
+  height: 52px;
+  font-size: 12px;
+
+}
+.product_name h4{
+  font-size: 10px;
+}
+
+}
+</style>
+{% endblock style %}
+<body>
+  {% block body %}
+
+<center><h1 class="main-title">Today's Best Items</h1></center>
+
+<div class="exct_top">
+
+ 
+  {% for i in px %}
+  <div class="product">
+
+    <div class="badge">-{{i.off}}% OFF</div>
+
+    <div class="top_img_div">
+      <img src="{{i.image.url}}">
+    </div>
+
+    <div class="product_name">
+      <h4>{{i.name}}</h4>
+    </div>
+
+    <p class="desc">
+      {{i.decription}}
+    </p>
+
+    <div class="price-box">
+      <span class="new-price">₹{{i.price}}</span>
+      <span class="old-price">₹{{i.oldprice}}</span>
+    </div>
+
+    <div class="product_btn">
+      <a href="{{i.link}}" class="buy-btn">🛒 Buy Now</a>
+    </div>
+    
+  </div>
+  {% endfor %}
+
+</div>
+
+  {% endblock body %}
+
+</body>
+</html>

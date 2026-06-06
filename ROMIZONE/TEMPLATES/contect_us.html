@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>contect us</title>
+		{% block style %}
+	<style>
+		.data_p{
+			margin-left: 70px;
+		}
+		.data_h3{
+			margin-left: 25px;
+		}
+				@media(max-width:580px){
+.data_p{
+	font-size: 14px;
+	margin-left: 15px
+	
+}
+.data_h3{
+	margin-left: -1px;
+	font-size: 15px;
+}
+.data_h2{
+	font-size: 20px;
+}
+.div_data_exct{
+	margin: 15px;
+	/* border: 2px solid red; */
+}
+
+
+		}
+	</style>
+	{% endblock style %}
+
+
+</head>
+<body>
+{% block body %}
+<div class="div_data_exct">
+<center><h2>Contact Us – RokartZone</h2></center>
+
+<p class="data_p">If you have any questions, feedback, or business inquiries, feel free to contact us.</p>
+<hr>
+<p class="data_p">📧 Email: [support@rokartzone.com](mailto:support@rokartzone.com)</p>
+<p class="data_p">🌐 Website: <a href="/rokartzone.com"> https://rokartzone.com</a></p>
+
+<p class="data_p">We usually respond within 24–48 hours.</p>
+<hr>
+<h3 class="data_h3">For inquiries related to:</h3>
+
+<p class="data_p">* Affiliate partnerships<br></p>
+<p class="data_p">* Product queries<br></p>
+<p class="data_p">* Website issues<br></p>
+<p class="data_p">* Feedback or complaints<br></p>
+
+<p class="data_p">You can reach out anytime.|</p>
+
+<p class="data_p">Thank you for visiting RokartZone!</p>
+</div>
+{% endblock body %}
+</body>
+</html>

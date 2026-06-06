@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% block title %} {% endblock title %}</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      /* background-color:yellow; */
+    }
+
+    /* Navbar */
+    /* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(10,121,245,0.9);
+  /* background-color:rgb(92, 27, 228); */
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  z-index: 15;
+}
+
+/* LOGO */
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+.logo_image{
+  height: 200px;
+  width: 300px;
+  margin-top: 2px;
+  margin-left: -55px;
+ 
+}
+.logo_image img{
+  height: 100%;
+  width: 100%;
+  
+}
+
+/* MENU */
+.menu {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 17px;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* Hover underline animation */
+.menu a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: yellow;
+  transition: 0.3s;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+/* DEAL BUTTON */
+.deals {
+  background: red;
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* DROPDOWN MEGA MENU */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 50px;
+  background: #fff;
+  color: black;
+  padding: 20px;
+  width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dropdown-menu a {
+  color: black;
+  padding: 8px 0;
+  display: block;
+}
+
+/* SEARCH */
+.search-box {
+  /* display: flex; */
+  background: white;
+  border-radius: 30px;
+  overflow: hidden;
+  margin-right: 110px;
+}
+
+.search-box input {
+  border: none;
+  padding: 8px 15px;
+  outline: none;
+  /* margin-right: 70px; */
+}
+
+.search-box button {
+  background: orange;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+.search-btn:hover{
+  background-color: rgb(255, 138, 21);
+}
+
+/* PROFILE */
+/* .profile {
+  position: relative;
+  color: white;
+  cursor: pointer;
+  margin-right: 50px;
+} */
+
+/* .profile-menu {
+  display: none;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background: white;
+  color: black;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 120px;
+  margin-right: -17px;
+} */
+
+/* .profile-menu a {
+  padding: 10px;
+  display: block;
+} */
+
+/* .profile:hover .profile-menu {
+  display: block;
+} */
+/* .right{
+  display: flex;
+} */
+
+/* ==============================footer=================================== */
+    .footer {
+  background: #111;
+  color: #fff;
+  margin-top: 50px;
+  padding-top: 30px;
+  width: 100%;
+  position: relative;
+ margin-top: 18%;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0x;
+
+}
+
+.footer-col {
+  width: 220px;
+  margin-bottom: 20px;
+}
+
+.footer-col h3,
+.footer-col h4 {
+  margin-bottom: 15px;
+}
+
+.footer-col p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.footer-col a {
+  display: block;
+  text-decoration: none;
+  color: #ccc;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.footer-col a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 10px;
+  border-top: 1px solid #333;
+  font-size: 14px;
+  color: #aaa;
+}
+.home_body{
+padding-top: 100px;
+     /* background: paleturquoise; */
+}
+.suggestionx{
+ margin-left: 75%;
+ margin-top: -20px;
+}
+.error_search{
+  font-size: 17px;
+  margin-left: 75%;
+  margin-top: -27px;
+}
+.data_list{
+border: 3px solid red;
+}
+
+/* ================== GLOBAL FIX ================== */
+/* body {
+  overflow-x: hidden;
+} */
+
+/* ========================media 580px=================================== */
+@media (max-width: 580px) {
+
+      body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      /* background-color:yellow; */
+    }
+
+  .navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 55px;
+  background: rgba(10,121,245,0.9);
+  /* background-color:rgb(92, 27, 228); */
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  z-index: 13;
+  }
+
+   /* LOGO FIX */
+   .logo_image {
+    height: 120px;
+    width: 160px;
+    position: absolute;
+  margin-top: 85px;
+  margin-left: 65px;
+  z-index: 11;
+   /* border: 2px solid red;  */
+
+
+  }
+
+
+
+  
+  
+
+  /* MENU FIX */
+  .menu {
+    gap: 7px;
+  height: 40px;
+  margin-left: -20px;
+    
+  }
+
+  .menu a {
+    font-size: 12px;
+    margin: 0;
+    padding: 4px;
+    white-space: nowrap;
+    z-index: 13;
+  }
+
+.deals {
+  background: none;
+  padding: 3px 6px;
+  border-radius: 5px;
+  font-weight: bold;
+  /* border: 1px solid red; */
+  background-color:purple;
+ padding-top: 15px;
+}
+  .cetogoryx{
+   top: -1px;
+    /* border: 2px solid red; */
+padding: 4px;
+        /* margin-top: 55px; */
+  }
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 50px;
+  background: #fff;
+  color: black;
+  padding: 10px;
+  width: 170px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  z-index: 16;
+}
+
+.dropdown-menu strong{
+	font-size: 16px;
+}
+
+.dropdown-menu a {
+  color: black;
+  padding: 8px 0;
+  
+}
+  /* SEARCH HIDE */
+  .search-box {
+    position: absolute;
+    top:0;
+    left: 0;
+    display: flex;
+    margin-top: 90px;
+    margin-left: 70px;
+    border: 1px solid black;
+    z-index: 10;
+  
+  
+  }
+  .search-box input{
+    font-size: 12px;
+    padding: 8px;
+    /* border: 2px solid red; */
+  
+  }
+  .search-box button{
+    font-size: 10px;
+  }
+  .home_body{
+    /* border: 1px solid green; */
+    margin-top: 60px;
+     /* background: paleturquoise; */
+}
+.break_line{
+  /* border: 1px solid red; */
+  position: absolute;
+ margin-top: 130px;
+  height: 75px;
+  width: 100%;
+  background-color:white;
+  margin-left: -35px;
+  z-index: 10;
+  
+}
+.suggestionx{
+ margin-left: 20%;
+ margin-top: -20px;
+ font-size: 18px;
+}
+.error_search{
+  font-size: 11px;
+  margin-left: 120px;
+  margin-top: -30px;
+}
+
+/* ------------------------------footer---------------------------------------------- */
+
+ /* Keep RokartZone centered */
+  .footer-col:first-child {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* 3 columns in one row (small grid feel) */
+  .footer-col:not(:first-child) {
+    width: 33%;
+    min-width: unset;
+    text-align: center;
+  }
+
+  .footer-col h4 {
+    font-size: 14px;
+  }
+
+  .footer-col a {
+    font-size: 12px;
+  }
+  .footer-container{
+    padding: 10px;
+
+  }
+.footer{
+  padding-top: 0px;
+}
+}
+
+ </style>
+</head>
+{% block style %}
+<style>
+
+</style>
+{% endblock style %}
+
+<body>
+
+<!-- 🔝 NAVBAR -->
+<div class="navbar">
+
+  <!-- Logo -->
+
+  <img src="/static/base/logoxx.png" class="logo_image">
+
+<div class="break_line"></div>
+  <!-- Menu -->
+  <div class="menu">
+
+    <a href="/home">Home</a>
+    <a href="/deals" class="deals">🔥 Hot Deals</a>
+
+    <!-- Categories -->
+    <div class="dropdown">
+      <a href="#" class="cetogoryx">Categories ⬇</a>
+
+      <div class="dropdown-menu">
+        <div>
+          <strong>Shopping</strong>
+          <a href="/d_mobile">Mobiles</a>
+          <a href="/d_electronic">Electronics</a>
+          <a href="/d_fashion">Fashion</a>
+        </div>
+
+        <div>
+          <strong>More</strong>
+          <a href="/d_kitchen">Home & Kitchen</a>
+          <a href="/d_beauty">Beauty</a>
+          <a href="/d_toys">Toys</a>
+        </div>
+      </div>
+    </div>
+
+    <a href="/toppicks">Top Picks ⭐</a>
+    <a href="/blogs">Blog ✍️</a>
+  </div>
+
+  <!-- Right -->
+  <div class="right">
+
+    <!-- Search -->
+     <form method="POST" action="/search">
+      {% csrf_token %}
+      <div class="search-box">
+      <input type="text" name="find" placeholder="Search products..." value="{{user_data}}" list="m" >
+      <datalist id="m" class="data_list">
+        <option>lisa</option>
+        <option>best smart watch</option>
+
+      </datalist>
+     
+      <button class="search-btn">Search</button>
+    </div>
+
+   </form>
+
+    <!-- Profile -->
+    <!-- <div class="profile">
+      👤   Profile
+      <div class="profile-menu">
+        <a href="#">My Profile</a>
+        <a href="#">Wishlist</a>
+        <a href="/logout_user" style="color:red;">Logout</a>
+      </div>
+    </div> -->
+
+  </div>
+
+</div>
+
+
+<!-- ----------------------------------body start-------------------------------------------------- -->
+ 
+<div class="home_body">
+
+
+    {% block body %}
+
+    {% endblock body %}
+
+    {% block script %}
+    <script>
+
+    </script>
+    {% endblock script %}
+</div>
+
+<!-- -----------------------------------------end body------------------------------------------------------ -->
+
+<!-- 🔻------------------------- FOOTER -------------------------------------------------------------->
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <!-- About -->
+    <div class="footer-col">
+      <h3>RokartZone</h3>
+      <p>
+        RokartZone is your daily destination for the best deals, top picks, and product recommendations from Amazon, Flipkart, and more.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="/home">Home</a>
+      <a href="/deals">Deals</a>
+      <a href="/toppicks">Top Picks</a>
+      <a href="/blogs">Blog</a>
+    </div>
+
+    <!-- Categories -->
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <a href="/d_electronic">Electronics</a>
+      <a href="/fitness">Fitness</a>
+      <a href="/news">News</a>
+      <a href="/d_fashion">Fashion</a>
+    </div>
+
+    <!-- Legal -->
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/term_condition">Terms & Conditions</a>
+      <a href="/contect_us">Contact Us</a>
+    </div>
+
+  </div>
+
+  <!-- Bottom -->
+  <div class="footer-bottom">
+    <p>© 2026 RokartZone. All rights reserved.</p>
+  </div>
+
+</footer>
+
+
+
+</body>
+</html>

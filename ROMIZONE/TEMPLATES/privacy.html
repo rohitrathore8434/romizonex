@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>privacy & policy</title>
+	{% block style %}
+	<style>
+		.data_p{
+			margin-left: 70px;
+		}
+		.data_h3{
+			margin-left: 25px;
+		}
+
+		@media(max-width:580px){
+.data_p{
+	font-size: 14px;
+	margin-left: 15px
+	
+}
+.data_h3{
+	margin-left: -1px;
+	font-size: 15px;
+}
+.data_h2{
+	font-size: 20px;
+}
+.div_data_exct{
+	margin: 15px;
+	/* border: 2px solid red; */
+}
+
+
+		}
+	</style>
+	{% endblock style %}
+
+
+</head>
+<body>
+{% block body %}
+<div class="div_data_exct">
+<center><h2 class="data_h2">Privacy Policy for RokartZone</h2></center>
+
+<p class="data_p">At RokartZone.com, accessible from <a href="/rokartzone.com">https://rokartzone.com,</a> one of our main priorities is the privacy of our visitors.</p>
+<hr>
+<h3 class="data_h3">Information We Collect:</h3>
+
+<p class="data_p">We may collect personal information such as name, email address, and other details when users voluntarily submit them through forms, subscriptions, or contact pages.</p>
+<hr>
+<h3 class="data_h3">Log Files:</h3>
+
+<p class="data_p">RokartZone follows standard procedures of using log files. These include IP address, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and number of clicks. This data is used for analyzing trends and improving user experience.</p>
+<hr>
+<h3 class="data_h3">Cookies and Web Beacons:</h3>
+
+<p class="data_p">We use cookies to store information about visitors’ preferences and optimize content based on browser type or other information.</p>
+<hr>
+<h3 class="data_h3">Google Advertising & Third-Party Services:</h3>
+
+<p class="data_p">We may use third-party advertising services such as Google AdSense in the future. These services may use cookies (including DART cookies) to serve ads based on users' visits to this and other websites.</p>
+
+<p class="data_p">We also participate in affiliate programs such as Amazon, Flipkart, Meesho, and other platforms. These third-party websites may track your activity through affiliate links using cookies.</p>
+<hr>
+<h3 class="data_h3">Third-Party Privacy Policies:</h3>
+
+<p class="data_p">Our Privacy Policy does not apply to other advertisers or websites. We advise you to consult the respective Privacy Policies of these third-party platforms.</p>
+<hr>
+<h3 class="data_h3">Children’s Information:</h3>
+
+<p class="data_p">We do not knowingly collect any Personal Identifiable Information from children under the age of 13.</p>
+<hr>
+<h3 class="data_h3">Consent:</h3>
+<p class="data_p">By using our website, you hereby consent to our Privacy Policy and agree to its terms.</p>
+</div>
+
+{% endblock body %}
+</body>
+</html>

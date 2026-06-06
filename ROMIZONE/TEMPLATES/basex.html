@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>home</title>
+ 
+  
+  <style>
+*{
+  margin: 0px;
+  
+}
+.all_container{
+  /* border: 6px solid green; */
+  /* opacity: 0.5; */
+ 
+}
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #222;
+      padding: 10px 20px;
+      color: #fff;
+      position: relative;
+    }
+
+    .logo img {
+      height: 120px;
+      width: 300px;
+      position: absolute;
+      margin-top: -50px;
+
+    }
+
+    .nav-center {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 16px;
+    }
+
+    .nav-links a:hover {
+      color: #00bcd4;
+    }
+
+    .search-bar input {
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+    }
+
+    .auth-links a {
+      margin-left: 15px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .auth-links a:hover {
+      color: #00bcd4;
+    }
+
+    
+    /* --------------crousel-------------------------- */
+.slide{
+/* border: 2px solid black;	 */
+height: 400px;
+width: 100%;
+
+}	
+.slide img{
+	height: 100%;
+	width: 100%;
+}
+.slides{
+position: relative;
+}
+.btn{
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	background: none;
+	border: none;
+	font-size: 30px;
+	font-weight: bold;
+	position: absolute;
+	top: 42%;
+	color: white;
+}	
+.pre{
+left: 20px;
+}
+.next{
+right: 20px;
+
+}
+.btn:hover{
+background-color: rgba(228, 228, 228, 0.3);
+}
+/* ---------------------about rokartzone------------------------------ */
+  .about {
+    
+    width: 90%;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    /* border: 2px solid red; */
+  }
+
+  h1 {
+    text-align: center;
+    color: #00bcd4;
+  }
+
+  h2 {
+    margin-top: 20px;
+    color:grey
+  }
+
+  p {
+    line-height: 1.6;
+    color: #555;
+  }
+
+  ul {
+    padding-left: 20px;
+  }
+
+  li {
+    color: grey ;
+    margin: 8px 0;
+  }
+  /* ---------------------footer----------------------------------------- */
+    .footer {
+    background: #111;
+    color: #fff;
+    padding: 40px 20px;
+  }
+
+  .footer-container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .footer-box {
+    width: 220px;
+    margin: 10px;
+  }
+
+  .footer-box h3 {
+    margin-bottom: 15px;
+    color: #00bcd4;
+  }
+
+  .footer-box a {
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    margin: 6px 0;
+    font-size: 14px;
+  }
+
+  .footer-box a:hover {
+    color: #fff;
+  }
+
+  /* Logos */
+  .brands img {
+    width: 80px;
+    margin: 5px;
+    background: #fff;
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid #333;
+    padding-top: 15px;
+    font-size: 14px;
+    color: #aaa;
+  }
+  .brand_footer{
+    /* border: 2px solid red; */
+    height: 50px;
+    width: 30px;
+    cursor: pointer;
+  }
+  
+  </style>
+
+</head>
+<body>
+<div class="all_container">
+    <nav class="navbar">
+      <!-- Logo -->
+      <div class="logo">
+        <img src="/static/rokartzone_logo.png" >
+      </div>
+  
+      <!-- Center Section -->
+      <div class="nav-center">
+        <div class="nav-links">
+          <a href="#">Home</a>
+          <a href="#">Blog</a>
+          <a href="#">Store</a>
+        </div>
+
+        <div class="search-bar">
+          <input type="text" placeholder="Search...">
+          <button>Search</button>
+        </div>
+      </div>
+
+      <!-- Right Section -->
+      <div class="auth-links">
+        <a href="/register_user">Register</a>
+        <a href="/login_user">Login</a>
+      </div>
+    </nav>
+
+
+    
+  <marquee style="color: black; background-color: honeydew;">RokartZone – Blogs, Deals & Trends All in One Place</marquee>
+  <!-- -----------crousel----------------------------------- -->
+  <div class="slides">
+
+    <div class="slide">
+      <img src="/static/crousel5.WEBP">
+    </div>
+
+    <div class="slide">
+      <img src="/static/crousel2.WEBP">
+    </div>
+
+    <div class="slide">
+    <img src="/static/crousel3.WEBP">
+    </div>
+
+    <div class="slide">
+      <img src="/static/crousel4.WEBP">
+    </div>
+    <div class="slide">
+      <img src="/static/crousel1.WEBP">
+    </div>
+    <div class="slide">
+      <img src="/static/crousel6.WEBP">
+    </div>
+  </div>
+  <div>
+  <button onclick="nextslide(-1);" class="pre btn"><</button>
+  <button onclick="nextslide(1);" class="next btn">></button>
+  </div>
+
+  <script>
+ let index = 0;
+
+function nextslide(number){
+index = index + number;
+
+let all_slides = document.getElementsByClassName('slide');
+
+if(index < 0){
+index = all_slides.length - 1;
+}
+
+if(index >= all_slides.length){
+index = 0;
+}
+
+slidshow(index);
+}
+
+slidshow(index);
+
+function slidshow(num){
+let all_slide = document.getElementsByClassName('slide');
+
+for(let i = 0; i < all_slide.length; i++){
+all_slide[i].style.display = "none";
+}
+
+all_slide[num].style.display = "block";
+}
+
+/* --------- Auto Slide ----------- */
+setInterval(function(){
+nextslide(1);
+},2000);  // 3000ms = 3 seconds
+  </script>
+
+  <!-- ------------------aboue rocartzone----------------------------------- -->
+  <div class="about">
+    <h1>About RokartZone</h1>
+
+    <p>
+      RokartZone is a multi-purpose website where you can find blogs and the best products in one place. 
+      We provide useful, entertaining, and informative content regularly.
+    </p>
+
+    <h2>📚 Our Blog Categories</h2>
+    <ul>
+      <li><b>Fitness:</b> Health tips, workout guides, and body improvement ideas</li>
+      <li><b>Funny:</b> Memes, jokes, and entertaining content</li>
+      <li><b>Amazing Facts:</b> Interesting and surprising facts</li>
+    </ul>
+  <hr>
+    <h2>🛒 Our Store</h2>
+    <p>
+      On RokartZone, you can explore the best deals and trending products from popular platforms:
+    </p>
+    <ul>
+      <li>Amazon trending and discounted products</li>
+      <li>Flipkart best offers</li>
+      <li>Meesho budget-friendly items</li>
+    </ul>
+    <hr>
+
+    <h2>🎁 Our Personal Products</h2>
+    <ul>
+      <li>Stylish Clothes</li>
+      <li>Cosmetics Products</li>
+      <li>Gift items with wrapping and custom stickers</li>
+    </ul>
+  <hr>
+    <h2>👤 About Me</h2>
+    <p>
+      I am the creator of RokartZone. My goal is to build a platform where people can get knowledge, 
+      entertainment, and the best shopping deals in one place.
+    </p>
+
+  </div>
+  <!-- -------------------------footer-------------------------------------------- -->
+
+  <footer class="footer">
+    <div class="footer-container">
+
+      <!-- About -->
+      <div class="footer-box">
+        <h3>RokartZone</h3>
+        <p>
+          Your one-stop platform for blogs, best deals, and unique products. 
+          Discover fitness tips, funny content, amazing facts, and top shopping offers.
+        </p>
+      </div>
+
+      <!-- Blog Links -->
+      <div class="footer-box">
+        <h3>Blogs</h3>
+        <a href="#">Fitness</a>
+        <a href="#">Funny</a>
+        <a href="#">Amazing Facts</a>
+      </div>
+
+      <!-- Store -->
+      <div class="footer-box">
+        <h3>Store</h3>
+        <a href="#">Amazon Deals</a>
+        <a href="#">Flipkart Offers</a>
+        <a href="#">Meesho Products</a>
+        <a href="#">Our Products</a>
+      </div>
+
+      <!-- Brands -->
+      <div class="footer-box brands">
+        <h3>Our Partners</h3>
+
+        <!-- Tum apni images replace kar sakte ho -->
+        <img src="/static/STORE/flipkart.png" class="brand_footer">
+        <img src="/static/STORE/amazone.png" class="brand_footer">
+        <img src="/static/STORE/meesho.png" class="brand_footer">
+        <img src="/static/STORE/rokartzone_logo.png" class="brand_footer" >
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 RokartZone | All Rights Reserved
+    </div>
+  </footer>
+<div>
+</body>
+</html>

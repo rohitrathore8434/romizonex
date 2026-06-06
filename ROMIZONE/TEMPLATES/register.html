@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>register</title>
+<style>
+
+
+  .register_container {
+    border:  2px solid grey;
+    display: flex;
+   margin-top: 25%;
+   margin-left: 50%;
+   transform: translate(-50%,-50%);
+    
+  }
+
+  /* Left Image */
+  .register_left {
+    /* border:  2px soild blue; */
+    height: 400px;
+    width: 300px;
+    margin: 10px;
+  
+   
+   
+  }
+  .register_left img{
+    /* border:  2px solid green; */
+    height: 100%;
+    width: 100%;
+  }
+
+  /* Right Form */
+  .register_right {
+    /* border:  2px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    margin: 10px;
+    margin-left: 10px;
+  }
+
+  .form_box {
+    width: 320px;
+  }
+
+  h2 {
+    text-align: center;
+    color: #00bcd4;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+    background: #00bcd4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: #0097a7;
+  }
+
+  .otp-btn {
+    background: #555;
+    margin-top: 5px;
+  }
+
+  .otp-btn:hover {
+    background: #333;
+  }
+  .login_font_size a{
+     color: #2874f0;
+      text-decoration: none;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+
+    .left {
+      width: 100%;
+      height: 200px;
+    }
+
+    .right {
+      width: 100%;
+      padding: 20px;
+    }
+  }
+  
+</style>
+
+</head>
+
+<body>
+
+  <!-- ----------------------------register---------------------------------------- -->
+
+<div class="register_container">
+
+  <!-- Left Image -->
+  <div class="register_left">
+      <img src="/static/STORE/register_image.PNG" >
+  </div>
+
+  <!-- Right Form -->
+  <div class="register_right">
+    <form class="form_box" action="/register_user" method="POST">
+      {% csrf_token %}
+
+      <h2>Registe Now</h2>
+
+      <input type="text" name="name" placeholder="Full Name" required style="box-sizing: border-box;">
+
+      <input type="text" name="email" placeholder="Email or Mobile" required style="box-sizing: border-box;">
+
+      <!-- OTP send (backend handle karega) -->
+      <button type="submit"  class="otp-btn"> Send OTP</button>
+      <p class="login_font_size">i have an already account? <a href="/login_user">Login</a></p>
+    </form>
+    
+       
+      
+  </div>
+
+</div>
+
+</body>
+</html>

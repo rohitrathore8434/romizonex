@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% block title %}fitness{% endblock title %}
+  {% block style %}
+  <style>
+.blog-header p {
+  color: gray;
+}
+.blog-header {
+  text-align: center;
+  margin-bottom: 20px;
+   margin-top: -37px;
+}
+.blog-header h1 {
+  font-size: 32px;
+}
+.blog-filters {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.blog-filters button {
+  padding: 8px 14px;
+  margin: 5px;
+  border: none;
+  background: #eee;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.blog-filters button:hover {
+  background: #ddd;
+}
+/* ------------------------fitness----------------------------------------- */
+
+        .container {
+            background: #fff;
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+
+        @media(max-width:580px){
+  .filter_baar{
+    margin-top: 65px;
+    z-index: 12;
+    /* border: 1px solid red; */
+   
+    height: 110px;
+  }
+.blog-header p {
+  color: gray;
+  font-size: 14px;
+  margin-top: -5px;
+}
+.blog-header {
+  text-align: center;
+  margin-bottom: 5px;
+  margin-top: -39px;
+}
+.blog-header h1 {
+  font-size: 22px;
+}
+.blog-filters {
+  text-align: center;
+  margin-top: -6px;
+}
+.blog-filters button{
+  font-size: 13px;
+
+}
+.blog-filters button {
+  padding: 4px 7px;
+  margin: 5px;
+  border: none;
+  background: #eee;
+  border-radius: 10px;
+  cursor: pointer;
+  
+}
+.blog-filters button:hover {
+  background: #ddd;
+}
+        }
+  </style>
+  {% endblock style %}
+</head>
+<body>
+    
+{% block body %}
+  <div class="blog-header">
+      <h1>✍️ Latest Blogs</h1>
+      <p>Fitness • Funny • News • Daily Updates</p>
+    </div>
+
+    <!-- 🎯 CATEGORY FILTER -->
+    <div class="blog-filters">
+      <a href="/blogs"><button>All</button></a>
+    <a href="/fitness"><button >Fitness 💪</button></a>
+    <a href="#"><button style="background-color: black;color: white;">Funny 😂</button></a>
+    <a href="/news"><button>News 📰</button></a>
+    </div>
+  <!-- -------------------------------------FITNESS----------------------------------------------- -->
+<div class="container">
+    <h1>{{funny.title}}</h1>
+    
+    <img src="{{funny.image.url}}" alt="Weight Gain">
+    
+     <p style="color: black;">
+      <b>{{funny.text|linebreaksbr}}</b>
+    </p>
+</div>
+{% endblock body %}
+</body>
+</html>

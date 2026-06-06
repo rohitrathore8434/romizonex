@@ -1,0 +1,538 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% block title %}deals{% endblock title %}
+  {% block style %}
+  <style>
+
+/* Header */
+.deals-header {
+  text-align: center;
+  margin-bottom: -10px;
+  /* margin-top: 10px; */
+}
+
+.deals-header h1 {
+  font-size: 32px;
+  margin-top: 90px;
+}
+
+.deals-header p {
+  color: gray;
+  margin-top: -10px;
+}
+
+/* Filters */
+.filters {
+  text-align: center;
+  margin-bottom: 20px;
+  /* border: 1px solid blue; */
+}
+
+.filters button {
+  padding: 8px 14px;
+  margin: 5px;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+  border-radius: 20px;
+}
+.cetogory_filter{
+  /* border: 1px solid blue; */
+  height:450px;
+  width: 200px;
+  /* display: none; */
+  margin-top: 20px;
+}
+.cetogory_filter a{
+  /* border: 1px solid red; */
+display: flex;
+justify-content: space-around;
+margin-top: 8px;
+text-decoration: none;
+
+}
+.cetogory_filter button{
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+   padding: 7px 11px;
+}
+.cetogory_filter button:hover{
+   background: #ddd;
+
+}
+.filters button:hover {
+  background: #ddd;
+}
+
+
+/* ---------------------deal------------------------------------------------- */
+.exct_deal {
+  width: 220px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: 0.3s;
+  position: relative;
+  margin-left: 30px;
+padding: 60px;
+margin-top: 30px;
+
+
+}
+
+/* Hover Effect */
+.exct_deal:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* Image */
+.deal_img img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+/* Title */
+.exct_deal h4 {
+  font-size: 16px;
+  margin: 5px 0;
+  height: 40px;
+  overflow: hidden;
+}
+
+/* Price */
+.exct_deal p {
+  margin: 2px 0;
+}
+
+/* New Price */
+.exct_deal p:first-of-type {
+  color: green;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Old Price */
+.exct_deal del {
+  color: gray;
+  font-size: 14px;
+}
+
+/* Buttons */
+.exct_deal a {
+  display: block;
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+}
+
+/* Flipkart Button */
+.exct_deal a:nth-of-type(1) {
+  background: #2874f0;
+}
+
+/* Amazon Button */
+.exct_deal a:nth-of-type(2) {
+  background: #ff9900;
+}
+
+/* Button Hover */
+.exct_deal a:hover {
+  opacity: 0.9;
+}
+
+/* Discount Badge (Optional add) */
+.best-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  padding: 3px 6px;
+  border-radius: 5px;
+}
+
+
+.exct_all{
+  /* border: 2px solid red; */
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -20px;
+
+}
+.exct_all_d{
+  /* border: 2px solid red; */
+   margin-left: 10px;
+  margin-top: -75px;
+  /* height:570px; */
+
+}
+.exct_cetogory_btn{
+  border: 2px solid #eee;
+  width: 200px;
+  border-radius: 15px;
+  margin-left: 10px;
+
+  position: sticky;   
+  top: 90px;
+  height: fit-content;
+
+ 
+}
+.all_exct_container{
+  display: flex;
+  align-items: flex-start; 
+}
+
+
+
+/* ================== RESPONSIVE MEDIA QUERIES ================== */
+
+/* 📱 Mobile (up to 600px) */
+@media (max-width: 580px) {
+
+  .all_exct_container {
+    flex-direction: column;
+  }
+
+.exct_cetogory_btn{
+  border: 2px solid #eee;
+  /* border: 2px solid green; */
+  width: 100px;
+  border-radius: 15px;
+  margin-left: 3px;
+
+  position: sticky;   
+  top: 200px;
+  left: 0;
+  /* height: fit-content; */
+  height: 365px;
+  margin-top: 33px;
+}
+.all_exct_container{
+  display: flex;
+  align-items: flex-start; 
+  /* border: 2px solid red; */
+}
+  .exct_cetogory_btn h3{
+    font-size: 13px;
+    margin-left: 30px;
+  }
+
+  .cetogory_filter {
+    /* width: 100%; */
+    /* height: auto; */
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* justify-content: center; */
+    
+  }
+  .cetogory_filter button{
+    font-size: 11px;
+    margin-left: -110px;
+  }
+
+  .cetogory_filter a {
+    margin: 5px;
+  }
+
+
+  .deals-header h1 {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    z-index: 100;
+    
+  }
+
+  .filters button {
+    font-size: 12px;
+    padding: 6px 10px;
+    margin-left: -1px;
+  }
+
+.deals-header{
+  display: none;
+}
+  /* .deals-header h1{
+    font-size: 13px;
+    margin-top: -320px;
+    margin-left: 100px;
+  }
+  .deals-header p{
+    font-size: 10px;
+    width: 200px;
+    margin-left: 130px;
+    margin-top: 10px;
+  } */
+  .exct_all {
+    justify-content: center;
+    margin-top: 400px;
+  }
+.filter2{
+  width: 380px;
+  margin-left: -10px;
+margin-top: -338px;
+background-color: white;
+
+
+ 
+
+}
+.exct_all_d{
+  position: fixed;
+}
+.filter2 button{
+  font-size: 9px;
+}
+  .exct_deal {
+    width: 1px;
+
+    height: 190px;
+ 
+   margin-left: 5px;
+    /* border: 1px solid blue; */
+  ;
+
+
+  
+  }
+  .exct_all {
+/* border: 1px solid red; */
+width: 260px;
+margin-left: 100px;
+margin-top: -380px;
+z-index: 10;
+
+
+  }
+.deal_img{
+  height: 120px;
+  width: 120px;
+  margin-left: -60px;
+  margin-top: -30px;
+
+}
+.deal_img img{
+  height: 100%;
+  width: 100%;
+}
+.exct_deal h4{
+  font-size: 8px;
+  /* border: 1px solid green; */
+  width: 110px;
+margin-left: -55px;
+
+}
+.exct_deal p{
+  font-size: 13px;
+  margin-left: -25px;
+  /* border: 1px solid red; */
+  margin-top: -18px;
+  
+}
+.discount_p{
+  font-size: 15px;
+  margin-left: -2px;
+  /* border: 1px solid blue; */
+  margin-top: 20px;
+  position: absolute;
+  
+}
+.exct_deal a{
+  font-size: 10px;
+  width: 80px;
+  margin-left: -50px;
+  margin-top: 45px;
+  /* border: 1px solid red; */
+  margin-bottom: -40px;
+}
+.all_cetegoryx{
+  margin-top: -20px;
+  position: sticky;
+  top:200px;
+
+
+}
+.best-badge{
+  font-size: 8px;
+  margin-top: -8px;
+  margin-left: -8px;
+}
+.exct_all_d{
+  z-index: 100;
+}
+/* .line_break{
+
+  background-color: red;
+  height: 75px;
+  width: 100%;
+  position: fixed;
+  z-index: 0;
+  margin-top: -350px;
+} */
+}
+
+
+  </style>
+  {% endblock style %}
+</head>
+<body>
+    
+{% block body %}
+<div class="all_exct_container">
+<div class="exct_cetogory_btn">
+ <center><h3>Filter</h3></center>
+    <div class="cetogory_filter Filters">
+    <a> <button onclick="xy(299,'appli');">Under ₹299</button></a>
+    <a><button onclick="xy(499,'appli');">Under ₹499</button></a>
+    <a><button onclick="xy(899,'appli');">Under ₹899</button></a>
+    <a ><button onclick="xy(1499,'appli');">Under ₹1499</button></a>
+    <a><button onclick="xy(3000,'appli');">Under ₹3000</button></a>
+    <a><button onclick="xy(5000,'appli');">Under ₹5,000</button></a>
+    <a><button onclick="xy(10000,'appli');">Under ₹10,000</button></a>
+    <a><button onclick="xy(20000,'appli');">Under ₹20,000</button></a>
+    <a><button onclick="xy(50000,'appli');">Under ₹50,000</button></a>
+    <a><button onclick="xy(100000,'appli');">Under ₹1,00000</button></a>
+      </div>
+    </div>
+
+<!-- ----------------------------------------------------------------------- -->
+ <div class="all_cetegoryx">
+    <div class="exct_all_d">
+      <!-- 🔥 HEADER -->
+      <div class="deals-header">
+        <h1>Today’s Mega Deals</h1>
+        <p>Grab the hottest deals before they’re gone!</p>
+      </div>
+
+        <!-- 🎯 FILTER BAR -->
+      <div class="filters filter2">
+        
+        <a href="/deals"><button >All</button></a>
+        <a href="/d_electronic"><button>Electronics</button></a>
+        <a href="/d_fitness"><button>Fitness</button></a>
+        <a href="/d_fashion"><button>Fashion</button></a>
+        
+        <a href="/d_mobile"><button>Mobiles</button></a>
+        <a href="/d_beauty"><button>Beauty</button></a>
+        <a href="/d_food"><button>Food & Health</button></a>
+        <a href="/d_kitchen"><button>Home & Kitchen</button></a>
+        <a href="/d_toys"><button>Toys</button></a>
+        <a href="/d_furniture"><button>Furniture</button></a>
+        <a href="/d_appliances"><button style="background-color: black; color:white">Applinces</button></a>
+      </div>
+    </div>
+  ` <div class="line_break"></div>
+      <!-- 🛒 DEALS GRID -->
+
+    <div class="exct_all" id="fetch_data">
+    </div>
+
+
+  </div>
+
+</div>
+
+        <script>
+          // alert("0000000000000000000");
+        function xy(p,n){
+
+      document.getElementById("fetch_data").innerHTML="";//fetch data div empty
+
+
+          let x = "/filter_appliance/"+p+"/"+n+"/";
+          // alert(x);
+          //  let csrf=document.getElementById("cs").value;
+
+      fetch(x,{
+        method:'post',
+        headers:{
+          'Content-Type':'application/json',
+          'X-CSRFToken':'{{ csrf_token }}'
+        },
+
+        })
+        .then(res=> res.json()) //jo data aayega use json main convert karega, yaha res fixed word nahi hai
+        .then(abcs=>{  ///abcs yaha ek variable hai jisme dta store hoga
+          //==========================================================
+          abcs.allx.forEach(i => {
+            let x=document.createElement("div");
+            x.setAttribute("class","exct_deal");
+
+            let best = document.createElement("span");
+            best.setAttribute("class", "best-badge");
+            best.innerText =i.badge;
+            x.append(best);
+
+            let y=document.createElement("div");
+            y.setAttribute("class","deal_img")
+            x.append(y);
+            let bb="/media/"+i.image;
+            z=document.createElement("img");
+            z.setAttribute("src",bb);
+            y.append(z);
+
+            let n=document.createElement("h4");
+            n.innerText=i.name;
+            x.append(n);
+
+            p=document.createElement('p');
+                p.innerText="₹"+i.price;
+            x.append(p);
+
+            p2=document.createElement("p");
+            p2.setAttribute("style","color:red;");
+            x.append(p2);
+
+            dl=document.createElement("del");
+           dl.setAttribute("style","color:red;");
+           dl.setAttribute("class","discount_p");
+            dl.innerText=i.discount;
+            p2.append(dl);
+
+            link=document.createElement("a");
+            link.setAttribute("href",i.link);
+            link.innerHTML="Buy on amazone";
+            x.append(link);
+
+            link2=document.createElement("a");
+            link2.setAttribute("href","#");
+            link2.innerHTML="Buy on Flipkart";
+            x.append(link2);
+
+            console.log(x);
+            let ppp= document.getElementById("fetch_data");
+            ppp.append(x);
+            document.getElementById("fetch_data").append(x);
+            //===============================================
+          
+          });
+          
+        });
+
+      }
+      xy(0,'appli');
+      // abc();
+      </script>
+{% endblock body %}
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - RokartZone</title>
+  <style>
+
+  
+
+    .login-box {
+      width: 350px;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      margin-top: -20px;
+      transform: translate(-50%,-50%);
+      margin-left: 50%;
+      margin-top: 25%;
+    }
+
+    /* Top Image */
+    .top_image {
+        /* border:  2px solid red; */
+        height: 250px;
+        width: 365px;
+   
+    
+    }
+    .top_image img{
+        height: 100%;
+        width: 100%;
+    }
+
+    .form {
+      padding: 25px;
+      padding-top: 0px;
+      
+    }
+
+    .form h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .input-box {
+      margin-bottom: 15px;
+    }
+
+    .input-box input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      outline: none;
+      font-size: 14px;
+    }
+
+    .input-box input:focus {
+      border-color: #2874f0;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 10px;
+      background: #2874f0;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #0f5bd3;
+    }
+
+    .extra {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .extra a {
+      color: #2874f0;
+      text-decoration: none;
+    }
+
+    .extra a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+ <div class="login-box">
+
+    <!-- Top Image -->
+    <div class="top_image">
+        <img src="/static/STORE/login_image.PNG" >
+    </div>
+
+    <!-- Form -->
+    <div class="form">
+      <h2>Login to RokartZone</h2>
+
+      <form action="/login_user" method="POST">
+        {% csrf_token %}
+        <div class="input-box">
+          <input type="text" name="email" placeholder="Email or Mobile" required style="box-sizing: border-box;">
+        </div>
+
+        <div class="input-box">
+          <input type="password" name="password" placeholder="Password" required style="box-sizing: border-box;">
+        </div>
+
+      <input type="submit" class="btn" value="Login">
+      </form>
+
+      <div class="extra">
+        <p>Don't have an account? <a href="/register_user">Register</a></p>
+           <a href="/forgotpassword">Forgot Password</a>
+      </div>
+
+    </div>
+ </div>
+
+</body>
+</html>
