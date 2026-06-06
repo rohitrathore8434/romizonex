@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-3(%((0+0bm)#94zo!yqn%3aw%zgvf%l*+wut1hgvm_&oqf4&u^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["*","https://romizone.onrender.com","romizone.onrender.com"]
 
 
 # Application definition
