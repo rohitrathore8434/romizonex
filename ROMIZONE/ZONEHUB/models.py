@@ -15,14 +15,21 @@ class EmailForm(models.Model):
         return self.email+" "+self.otp     
 # ---------------------------------Home--------------------------------------------
 
-class h_todaydeals(models.Model):
-  image=models.ImageField(upload_to="photos/")
-  name=models.CharField(max_length=50)
-  price=models.CharField(max_length=200)
-  link = models.URLField()
+class h_toppicks(models.Model):
+    image = models.ImageField(upload_to="photos/", blank=True, null=True )
+    image_url = models.URLField( max_length=500,blank=True,null=True)
+    name = models.CharField(max_length=50)
+    price = models.CharField(max_length=200)
+    link = models.URLField()
 
-  def __str__(self):
-      return self.name
+    def __str__(self):
+        return self.name
+
+    @property
+    def display_image(self):
+        if self.image:
+            return self.image.url
+        return self.image_url
   
 class h_toppicks(models.Model):
   image=models.ImageField(upload_to="photos/")
